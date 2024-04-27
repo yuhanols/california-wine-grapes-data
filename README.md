@@ -1,6 +1,8 @@
 # California Wine Grap Data Processing
 
-This is a library that processes California Wine Grape data from USDA website
+This is the data processing pipeline backing the [California Wine Grapes](https://asmith.ucdavis.edu/data/ca-wine-grapes) data visualization
+
+The library that processes California Wine Grape data from USDA website
 
 USDA's National Agricultural Statistics Service
 California Field Office
