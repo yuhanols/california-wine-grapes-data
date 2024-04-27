@@ -7,13 +7,9 @@ The library that processes California Wine Grape data from USDA website
 USDA's National Agricultural Statistics Service
 California Field Office
 
-Grape Crush Reports Listing
+* [Grape Crush Reports Listing](https://www.nass.usda.gov/Statistics_by_State/California/Publications/Specialty_and_Other_Releases/Grapes/Crush/Reports/index.php)
 
-"https://www.nass.usda.gov/Statistics_by_State/California/Publications/Specialty_and_Other_Releases/Grapes/Crush/Reports/index.php"
-
-Grape Acreage Reports Listing
-
-"https://www.nass.usda.gov/Statistics_by_State/California/Publications/Specialty_and_Other_Releases/Grapes/Acreage/Reports/"
+* [Grape Acreage Reports Listing](https://www.nass.usda.gov/Statistics_by_State/California/Publications/Specialty_and_Other_Releases/Grapes/Acreage/Reports/)
 
 The data processing pipeline is split into 2 stages
 
