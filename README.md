@@ -116,46 +116,46 @@ script.py <start_year> <end_year> <raw_data_output_directory> <True|False - whet
 Create an output directory using YYYYMMDD format so that you can save today's copy and revise later
 
 ```shell
-mkdir -p ./output/YYYYMMYY
+mkdir -p ./output/YYYYMMDD
 ```
 
 2_volume
 
 ```shell
-crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMYY True
+crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMDD True
 ```
 
 This will create
 
-* `output/YYYYMMYY/VolumeRaw` that contains raw data from USDA website
-* `output/YYYYMMYY/Volume` that contains standardized volume crushed data for each year for each California district
+* `output/YYYYMMDD/VolumeRaw` that contains raw data from USDA website
+* `output/YYYYMMDD/Volume` that contains standardized volume crushed data for each year for each California district
 
 Similarly, do that for other types of data
 
 ```shell
-crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMYY True
+crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMDD True
 ```
 
 3_degree_brix
 
 ```shell
-crush_data_crawler/3_degree_brix.py 1991 2023 ./output/YYYYMMYY True
+crush_data_crawler/3_degree_brix.py 1991 2023 ./output/YYYYMMDD True
 ```
 4_purchased_volume
 
 ```shell
-crush_data_crawler/4_purchased_volume.py 1991 2023 ./output/YYYYMMYY True
+crush_data_crawler/4_purchased_volume.py 1991 2023 ./output/YYYYMMDD True
 ```
 5_purchased_degree_brix
 
 ```shell
-crush_data_crawler/5_purchased_degree_brix.py 1991 2023 ./output/YYYYMMYY True
+crush_data_crawler/5_purchased_degree_brix.py 1991 2023 ./output/YYYYMMDD True
 ```
 
 6_price
 
 ```shell
-crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMYY True
+crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMDD True
 ```
 
 All above data set shared the same processing library [crush_data_crawler_lib.py](crush_data_crawler/crush_data_crawler_lib.py)
@@ -164,7 +164,7 @@ as they are all downloaded from the same USDA data set.
 For 12_acreage data, a new crawler is needed as it is downloaded from alternative source
 
 ```shell
-crush_data_crawler/12_acreage.py 1991 2023 ./output/YYYYMMYY True
+crush_data_crawler/12_acreage.py 1991 2023 ./output/YYYYMMDD True
 ```
 
 ### Step 5 Reshape data into a single dataset
@@ -180,10 +180,10 @@ Rscript -e 'install.packages(c("writexl", "readxl"), repos="https://cloud.r-proj
 Then run the actual script for subsequent times
 
 ```shell
-Rscript crush_data_reshape/reshape_total.R ./output/YYYYMMYY YYYYMMYY.xlsx
+Rscript crush_data_reshape/reshape_total.R ./output/YYYYMMDD YYYYMMDD.xlsx
 ```
 
-This will use the data in `output/YYYYMMYY`, flatten all data into a single dataframe, and write it to `output/YYYYMMYY.xlsx`
+This will use the data in `output/YYYYMMDD`, flatten all data into a single dataframe, and write it to `output/YYYYMMDD.xlsx`
 which can be used for further data analysis
 
 ### Tips for debugging data pipeline
@@ -191,10 +191,10 @@ which can be used for further data analysis
 Avoid downloading raw data multiple times by setting last argument to `crush_data_crawler` as `False`, such as
 
 ```shell
-crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMYY False
+crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMDD False
 ```
 
-This will reuse `./output/YYYYMMYY/PriceRaw` and avoid downloading it multiple times
+This will reuse `./output/YYYYMMDD/PriceRaw` and avoid downloading it multiple times
 
 ### Copyright
 
