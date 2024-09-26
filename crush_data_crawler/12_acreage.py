@@ -90,7 +90,7 @@ def get_all_zip_file_paths(url_containing_zips):
             current_year = year
             continue
         # Try to find Excel zip files
-        if stripped_data != 'XLS':
+        if stripped_data != 'XLS' and stripped_data != 'XLSX':
             # Skip items that is not an Excel link nor year value
             continue
         # Now we have a clickable XLS link
@@ -129,6 +129,7 @@ def flatten_sheets_from_excel(source_path, destination_path):
     for excel_file in all_excel_files:
         extension = pathlib.Path(excel_file).suffix.strip(". ").lower()
         full_excel_path = os.path.join(source_path, excel_file)
+        engine = None
         if extension == 'xlsx':
             engine = "openpyxl"
         elif extension == 'xls':
@@ -140,7 +141,8 @@ def flatten_sheets_from_excel(source_path, destination_path):
             shutil.copyfile(full_excel_path, destination_file)
             continue
         for sheet in xl.sheet_names:
-            destination_file = os.path.join(destination_path, "{}.{}".format(sheet, extension))
+            # Force output extension to xlsx to be compatible with latest pandas release
+            destination_file = os.path.join(destination_path, "{}.{}".format(sheet, "xlsx"))
             # print("Extracting file from {} to {}".format(full_excel_path, destination_file))
             df = pd.read_excel(xl, sheet_name=sheet)
             df.to_excel(destination_file, index=False)

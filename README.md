@@ -163,8 +163,10 @@ as they are all downloaded from the same USDA data set.
 
 For 12_acreage data, a new crawler is needed as it is downloaded from alternative source
 
+Note that acreage data starts from year 1994 as that was the first year USDA published California Grade Acreage data by grape crush districts. 
+
 ```shell
-crush_data_crawler/12_acreage.py 1991 2023 ./output/YYYYMMDD False
+crush_data_crawler/12_acreage.py 1994 2023 ./output/YYYYMMDD False
 ```
 
 ### Step 5 Reshape data into a single dataset
