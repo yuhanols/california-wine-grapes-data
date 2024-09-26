@@ -190,10 +190,10 @@ which can be used for further data analysis
 
 ### Tips for debugging data pipeline
 
-Avoid downloading raw data multiple times by setting last argument to `crush_data_crawler` as `False`, such as
+Avoid downloading raw data multiple times by setting last argument to `crush_data_crawler` as `True`, such as
 
 ```shell
-crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMDD False
+crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMDD True
 ```
 
 This will reuse `./output/YYYYMMDD/PriceRaw` and avoid downloading it multiple times
