@@ -102,7 +102,7 @@ source ./venv/bin/activate
 Install dependencies
 
 ```shell
-python3 -m pip install setuptools beautifulsoup4 bs4 openpyxl urllib3 pandas numpy requests et-xmlfile
+python3 -m pip install setuptools beautifulsoup4 bs4 openpyxl urllib3 pandas numpy requests et-xmlfile xlrd
 ```
 
 ### Step 4 Let's crawl some data!
