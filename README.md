@@ -122,7 +122,7 @@ mkdir -p ./output/YYYYMMDD
 2_volume
 
 ```shell
-crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMDD True
+crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMDD False
 ```
 
 This will create
@@ -133,29 +133,29 @@ This will create
 Similarly, do that for other types of data
 
 ```shell
-crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMDD True
+crush_data_crawler/2_volume.py 1991 2023 ./output/YYYYMMDD False
 ```
 
 3_degree_brix
 
 ```shell
-crush_data_crawler/3_degree_brix.py 1991 2023 ./output/YYYYMMDD True
+crush_data_crawler/3_degree_brix.py 1991 2023 ./output/YYYYMMDD False
 ```
 4_purchased_volume
 
 ```shell
-crush_data_crawler/4_purchased_volume.py 1991 2023 ./output/YYYYMMDD True
+crush_data_crawler/4_purchased_volume.py 1991 2023 ./output/YYYYMMDD False
 ```
 5_purchased_degree_brix
 
 ```shell
-crush_data_crawler/5_purchased_degree_brix.py 1991 2023 ./output/YYYYMMDD True
+crush_data_crawler/5_purchased_degree_brix.py 1991 2023 ./output/YYYYMMDD False
 ```
 
 6_price
 
 ```shell
-crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMDD True
+crush_data_crawler/6_price.py 1991 2023 ./output/YYYYMMDD False
 ```
 
 All above data set shared the same processing library [crush_data_crawler_lib.py](crush_data_crawler/crush_data_crawler_lib.py)
@@ -164,7 +164,7 @@ as they are all downloaded from the same USDA data set.
 For 12_acreage data, a new crawler is needed as it is downloaded from alternative source
 
 ```shell
-crush_data_crawler/12_acreage.py 1991 2023 ./output/YYYYMMDD True
+crush_data_crawler/12_acreage.py 1991 2023 ./output/YYYYMMDD False
 ```
 
 ### Step 5 Reshape data into a single dataset
