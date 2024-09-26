@@ -150,7 +150,7 @@ def flatten_sheets_from_excel(source_path, destination_path):
 
 def extract_data_from_excel(year, flattened_dir_for_year):
     pattern = "gabtb12"
-    if year == 1994 or year == 2022:
+    if year == 1994 or year >= 2022:
         pattern = "gabtb10"
     all_files = [f for f in os.listdir(flattened_dir_for_year) if os.path.isfile(os.path.join(flattened_dir_for_year, f))]
     print("all files", all_files)
