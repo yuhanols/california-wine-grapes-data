@@ -110,7 +110,7 @@ python3 -m pip install setuptools beautifulsoup4 bs4 openpyxl urllib3 pandas num
 All scripts following the same command line argument style
 
 ```shell
-script.py <start_year> <end_year> <raw_data_output_directory> <True|False - whether to re-download raw data>
+script.py <start_year> <end_year> <raw_data_output_directory> <True|False - whether to skip downloading raw data>
 ```
 
 Create an output directory using YYYYMMDD format so that you can save today's copy and revise later
